@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Life Time</title>
+
+    <script src="jquery.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" href="jquery-ui.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <script>
+    $(function() {
+        var d1 = 680630400000
+        var d2 = new Date();
+        var diff = 0
+        $('#calculated').val(Math.floor((d2.getTime() - d1) / 86400000));
+        var selector = function (dateStr) {
+            d1 = $('#date1').datepicker('getDate');
+            // var d2 = $('#date2').datepicker('getDate');
+            diff = 0;
+            console.log(d1.getTime())
+            if (d1 && d2) {
+                diff = Math.floor((d2.getTime() - d1.getTime()) / 86400000); // ms per day
+            }
+            $('#calculated').val(diff);
+        }
+        $("#date1").datepicker({
+            defaultDate: "-23y",
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "1950:2050"
+        });
+        $( "#anim" ).change(function() {
+            $( "#date1" ).datepicker( "option", "showAnim", $( this ).val() );
+        });
+        // $('#date2').datepicker({});
+        // $('#date1, #date2').change(selector)
+        $('#date1').change(selector)
+    });
+    </script>
+</head>
+<body>
+    <div class="container-fluid" style="text-align: center">
+        <div class="header">
+            <h3>我这一生</h3>
+        </div>
+        <div>出生日期: <input type="text" id="date1" style="display: inline; width: 100px;" class="form-control" value="07/28/1991"></div>
+        <div>距今天数: <input id="calculated" class="form-control" disabled style="display: inline; border: 0; width:100px; color: blue;"></div>
+    </div> <!-- /container -->
+</body>
+</html>
