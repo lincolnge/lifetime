@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Life Time</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style type="text/css">
+    .container-fluid {
+        text-align: center;
+    }
+    #date1 {
+        padding: 20px;
+    }
+    #date1 .ui-datepicker {
+        margin: 0 auto;
+    }
+    #calculated {
+        display: inline;
+        border: 0;
+        width: 100px;
+        color: blue;
+    }
+    </style>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="scripts/main.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="header">
+            <h3>我这一生</h3>
+        </div>
+        <div id="date1"></div>
+        <div>距今天数:
+            <input id="calculated" class="form-control" disabled>
+        </div>
+    </div>
+    <!-- /container -->
+</body>
+
+</html>
